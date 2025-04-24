@@ -31,12 +31,17 @@ const FundingBarChart = () => {
 
   return (
     // Render the bar chart using recharts
-    <BarChart width={600} height={400} data={chartData}>
-      <CartesianGrid strokeDasharray="3 3" /> {/* Grid lines */}
-      <XAxis dataKey="year" /> {/* X-axis for years */}
-      <YAxis /> {/* Y-axis for total funding */}
-      <Tooltip /> {/* Tooltip for displaying data on hover */}
-      <Bar dataKey="total" fill="#8884d8" /> {/* Bars representing total funding */}
+    <BarChart
+      width={600}
+      height={400}
+      data={chartData}
+      style={{ backgroundColor: '#ffe6f2', border: '1px solid #ff66b2', borderRadius: '10px', padding: '10px' }}
+    >
+      <CartesianGrid strokeDasharray="3 3" stroke="#ff99cc" /> {/* Grid lines */}
+      <XAxis dataKey="year" stroke="#ff66b2" /> {/* X-axis for years */}
+      <YAxis stroke="#ff66b2" /> {/* Y-axis for total funding */}
+      <Tooltip contentStyle={{ backgroundColor: '#ffccdd', border: '1px solid #ff66b2' }} /> {/* Tooltip */}
+      <Bar dataKey="total" fill="#ff66b2" /> {/* Bars representing total funding */}
     </BarChart>
   );
 };

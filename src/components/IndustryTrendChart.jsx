@@ -38,17 +38,22 @@ const IndustryTrendChart = () => {
 
   return (
     // Render the line chart using recharts
-    <LineChart width={800} height={400} data={chartData}>
-      <CartesianGrid strokeDasharray="3 3" /> {/* Grid lines */}
-      <XAxis dataKey="year" /> {/* X-axis for years */}
-      <YAxis /> {/* Y-axis for funding amounts */}
-      <Tooltip /> {/* Tooltip for displaying data on hover */}
-      <Legend /> {/* Legend to identify industries */}
+    <LineChart
+      width={800}
+      height={400}
+      data={chartData}
+      style={{ backgroundColor: '#ffe6f2', border: '1px solid #ff66b2', borderRadius: '10px', padding: '10px' }}
+    >
+      <CartesianGrid strokeDasharray="3 3" stroke="#ff99cc" /> {/* Grid lines */}
+      <XAxis dataKey="year" stroke="#ff66b2" /> {/* X-axis for years */}
+      <YAxis stroke="#ff66b2" /> {/* Y-axis for funding amounts */}
+      <Tooltip contentStyle={{ backgroundColor: '#ffccdd', border: '1px solid #ff66b2' }} /> {/* Tooltip */}
+      <Legend wrapperStyle={{ color: '#ff66b2' }} /> {/* Legend */}
       {/* Render a line for each industry */}
       {Object.keys(chartData[0] || {})
         .filter((key) => key !== 'year') // Exclude the 'year' key
         .map((industry) => (
-          <Line key={industry} type="monotone" dataKey={industry} stroke="#8884d8" />
+          <Line key={industry} type="monotone" dataKey={industry} stroke="#ff66b2" />
         ))}
     </LineChart>
   );
