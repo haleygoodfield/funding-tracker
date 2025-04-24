@@ -32,8 +32,8 @@ const FundingBarChart = () => {
   return (
     // Render the bar chart using recharts
     <BarChart
-      width={600}
-      height={400}
+      width={800}
+      height={500}
       data={chartData}
       style={{ backgroundColor: '#ffe6f2', border: '1px solid #ff66b2', borderRadius: '10px', padding: '10px' }}
     >

@@ -39,8 +39,8 @@ const IndustryTrendChart = () => {
   return (
     // Render the line chart using recharts
     <LineChart
-      width={800}
-      height={400}
+      width={900}
+      height={500}
       data={chartData}
       style={{ backgroundColor: '#ffe6f2', border: '1px solid #ff66b2', borderRadius: '10px', padding: '10px' }}
     >
